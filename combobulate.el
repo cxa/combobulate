@@ -60,6 +60,16 @@
 (require 'combobulate-go)
 ;;; end language support
 
+;;;###autoload
+(defun combobulate-mode (&optional arg &rest _)
+  "Navigate and edit by syntactic constructs.
+
+This is a helper command that tries to activate the right
+Combobulate minor mode suitable for the current buffer."
+  (interactive "p")
+  ;; This is no longer an actual minor mode, but instead a function.
+  (combobulate-maybe-activate nil (not (null arg))))
+
 (provide 'combobulate)
 ;;; combobulate.el ends here
 
